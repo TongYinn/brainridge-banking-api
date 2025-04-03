@@ -53,7 +53,7 @@ A RESTful API for banking operations built with Spring Boot. This API provides f
    ./mvnw spring-boot:run
    ```
 
-The API will be available at `http://localhost:8080`
+The API will be available at `http://localhost:8081`
 
 ## API Endpoints
 
@@ -86,8 +86,8 @@ The API will be available at `http://localhost:8080`
 POST /api/accounts
 {
   "accountName": "John Doe",
-  "accountEmail": "john.doe@gmail.com",
-  "initialBalance": 1000.00
+  "accountEmail": "johndoe@gmail.com",
+  "initialBalance": 1000
 }
 ```
 
@@ -97,8 +97,8 @@ POST /api/accounts
 {
   "accountId": "550e8400-e29b-41d4-a716-446655440000",
   "accountName": "John Doe",
-  "accountEmail": "john.doe@gmail.com",
-  "accountBalance": 1000.00,
+  "accountEmail": "johndoe@gmail.com",
+  "accountBalance": 1000,
   "createdAt": "2023-07-15T10:30:45.123"
 }
 ```
@@ -111,7 +111,7 @@ POST /api/transactions/transfer
 {
   "fromAccountId": "550e8400-e29b-41d4-a716-446655440000",
   "toAccountId": "550e8400-e29b-41d4-a716-446655440001",
-  "amount": 200.00
+  "amount": 200
 }
 ```
 
@@ -122,7 +122,7 @@ POST /api/transactions/transfer
   "id": "550e8400-e29b-41d4-a716-446655440002",
   "fromAccountId": "550e8400-e29b-41d4-a716-446655440000",
   "toAccountId": "550e8400-e29b-41d4-a716-446655440001",
-  "amount": 200.00,
+  "amount": 200,
   "timestamp": "2023-07-15T10:35:45.123",
   "type": "TRANSFER"
 }
@@ -174,14 +174,8 @@ com.brainridge_banking.api
 └── util              # Utility classes
 ```
 
-## Future Enhancements
+## Implementation Assumptions
 
-- Persistent database integration
-- User authentication and authorization
-- Transaction pagination and filtering
-- Account statement generation
-- Interest calculation for savings accounts
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+1. The application uses UUIDs for account and transaction IDs
+2. Email validation is limited to format checking and a whitelist of common domains
+3. No authentication or authorization is implemented as it was not part of the requirements
