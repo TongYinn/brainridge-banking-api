@@ -39,7 +39,7 @@ A RESTful API for banking operations built with Spring Boot. This API provides f
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/your-username/brainridge-banking-api.git
+   git clone https://github.com/TongYinn/brainridge-banking-api.git
    cd brainridge-banking-api
    ```
 
